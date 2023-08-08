@@ -1,0 +1,1357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MEDIDDMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DepartmentInfo">
+          <Key>
+            <PropertyRef Name="Dep_Id" />
+          </Key>
+          <Property Name="Dep_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dep_Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DipositInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="S_Id" Type="int" />
+          <Property Name="S_Name" Type="varchar" MaxLength="50" />
+          <Property Name="DipositAmount" Type="int" />
+          <Property Name="C_Date" Type="date" />
+          <Property Name="D_Date" Type="date" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+          <Property Name="ExpensesAmount" Type="int" />
+          <Property Name="E_Date" Type="date" />
+        </EntityType>
+        <EntityType Name="GenderInfo">
+          <Key>
+            <PropertyRef Name="G_Id" />
+          </Key>
+          <Property Name="G_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="G_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MoneyTransectionTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="GiverId" Type="int" />
+          <Property Name="ReciverId" Type="int" />
+          <Property Name="Time" Type="varchar" MaxLength="50" />
+          <Property Name="PurposeId" Type="int" />
+          <Property Name="Remark" Type="varchar" MaxLength="500" />
+          <Property Name="MoneyType" Type="int" />
+          <Property Name="Money" Type="int" />
+          <Property Name="C_User" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="PersonalDipositInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="S_Id" Type="int" />
+          <Property Name="DipositAmount" Type="int" />
+          <Property Name="ExpensesAmount" Type="int" />
+          <Property Name="C_Date" Type="date" />
+          <Property Name="D_Date" Type="date" />
+          <Property Name="E_Date" Type="date" />
+          <Property Name="Discription" Type="varchar" MaxLength="500" />
+          <Property Name="TransectionType" Type="int" />
+          <Property Name="LoginUser" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ProductCatagory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Type" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProductOutDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InDate" Type="date" />
+          <Property Name="P_Id" Type="int" />
+          <Property Name="QTY" Type="int" />
+          <Property Name="GiverName" Type="varchar" MaxLength="200" />
+          <Property Name="ReceiverName" Type="varchar" MaxLength="200" />
+          <Property Name="OldOrNew" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="ProductStockDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="200" />
+          <Property Name="P_SerialNumber" Type="varchar" MaxLength="200" />
+          <Property Name="P_Catagory" Type="int" />
+          <Property Name="P_Location" Type="varchar" MaxLength="200" />
+          <Property Name="P_QTY" Type="int" />
+          <Property Name="P_In_Date" Type="date" />
+          <Property Name="P_Condition" Type="varchar" MaxLength="200" />
+          <Property Name="P_PersonName" Type="varchar" MaxLength="200" />
+          <Property Name="P_Remark" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="PurposeInfo">
+          <Key>
+            <PropertyRef Name="P_Id" />
+          </Key>
+          <Property Name="P_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="P_Name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SecurityTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Validiti" Type="date" />
+        </EntityType>
+        <EntityType Name="StudentInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="S_Id" Type="bigint" />
+          <Property Name="S_Name" Type="varchar" MaxLength="50" />
+          <Property Name="S_GenderId" Type="int" />
+          <Property Name="S_DepId" Type="int" />
+          <Property Name="S_Address" Type="varchar" MaxLength="200" />
+          <Property Name="S_Phonse" Type="int" />
+          <Property Name="S_DateOfBirth" Type="date" />
+          <Property Name="S_Discription" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TypeInfo">
+          <Key>
+            <PropertyRef Name="It" />
+          </Key>
+          <Property Name="It" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Home" Type="varchar" MaxLength="50" />
+          <Property Name="Information" Type="varchar" MaxLength="50" />
+          <Property Name="Personal" Type="varchar" MaxLength="50" />
+          <Property Name="Medid" Type="varchar" MaxLength="50" />
+          <Property Name="Setting" Type="varchar" MaxLength="50" />
+          <Property Name="About" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_MoneyTransectionTable_PurposeInfo">
+          <End Role="PurposeInfo" Type="Self.PurposeInfo" Multiplicity="0..1" />
+          <End Role="MoneyTransectionTable" Type="Self.MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurposeInfo">
+              <PropertyRef Name="P_Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="PurposeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoneyTransectionTable_StudentInfo">
+          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="0..1" />
+          <End Role="MoneyTransectionTable" Type="Self.MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="GiverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoneyTransectionTable_StudentInfo1">
+          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="0..1" />
+          <End Role="MoneyTransectionTable" Type="Self.MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="ReciverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalDipositInfo_StudentInfo">
+          <End Role="StudentInfo" Type="Self.StudentInfo" Multiplicity="0..1" />
+          <End Role="PersonalDipositInfo" Type="Self.PersonalDipositInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalDipositInfo">
+              <PropertyRef Name="S_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductOutDetail_ProductStockDetail">
+          <End Role="ProductStockDetail" Type="Self.ProductStockDetail" Multiplicity="0..1" />
+          <End Role="ProductOutDetail" Type="Self.ProductOutDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductStockDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductOutDetail">
+              <PropertyRef Name="P_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStockDetail_ProductCatagory">
+          <End Role="ProductCatagory" Type="Self.ProductCatagory" Multiplicity="0..1" />
+          <End Role="ProductStockDetail" Type="Self.ProductStockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatagory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStockDetail">
+              <PropertyRef Name="P_Catagory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="SP_7_Day_Data_Analysis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="TTYPE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Day_Diposit_And_Expenses_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Giver_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="GNAME" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Name_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="NAME" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Purpose_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="PURPOSE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Receiver_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="RNAME" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_And_Transection_Type_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="TType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Day_Wise_Transection_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Giver_And_Receiver_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="GNAME" Type="int" Mode="In" />
+          <Parameter Name="RNAME" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GName_RName_Date_Purpose_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="GNAME" Type="int" Mode="In" />
+          <Parameter Name="RNAME" Type="int" Mode="In" />
+          <Parameter Name="PURPOSE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GName_RName_Date_Purpose_Report2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SDATE" Type="date" Mode="In" />
+          <Parameter Name="EDATE" Type="date" Mode="In" />
+          <Parameter Name="GNAME" Type="int" Mode="In" />
+          <Parameter Name="RNAME" Type="int" Mode="In" />
+          <Parameter Name="PURPOSE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_Name_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NAME" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_Show_Student_Info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Show_Transection_Data_Info" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_Transection_Type_Report" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="MEDIDDMModelStoreContainer">
+          <EntitySet Name="DepartmentInfo" EntityType="Self.DepartmentInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DipositInfo" EntityType="Self.DipositInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenderInfo" EntityType="Self.GenderInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoneyTransectionTable" EntityType="Self.MoneyTransectionTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalDipositInfo" EntityType="Self.PersonalDipositInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCatagory" EntityType="Self.ProductCatagory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductOutDetail" EntityType="Self.ProductOutDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStockDetail" EntityType="Self.ProductStockDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurposeInfo" EntityType="Self.PurposeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecurityTable" EntityType="Self.SecurityTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentInfo" EntityType="Self.StudentInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeInfo" EntityType="Self.TypeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MoneyTransectionTable_PurposeInfo" Association="Self.FK_MoneyTransectionTable_PurposeInfo">
+            <End Role="PurposeInfo" EntitySet="PurposeInfo" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoneyTransectionTable_StudentInfo" Association="Self.FK_MoneyTransectionTable_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfo" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoneyTransectionTable_StudentInfo1" Association="Self.FK_MoneyTransectionTable_StudentInfo1">
+            <End Role="StudentInfo" EntitySet="StudentInfo" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalDipositInfo_StudentInfo" Association="Self.FK_PersonalDipositInfo_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfo" />
+            <End Role="PersonalDipositInfo" EntitySet="PersonalDipositInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductOutDetail_ProductStockDetail" Association="Self.FK_ProductOutDetail_ProductStockDetail">
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetail" />
+            <End Role="ProductOutDetail" EntitySet="ProductOutDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStockDetail_ProductCatagory" Association="Self.FK_ProductStockDetail_ProductCatagory">
+            <End Role="ProductCatagory" EntitySet="ProductCatagory" />
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MEDIDDMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MEDIDDMEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MEDIDDMModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MEDIDDMModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SP_Show_Student_Info" ReturnType="Collection(MEDIDDMModel.SP_Show_Student_Info_Result)" />
+          <FunctionImport Name="SP_Show_Transection_Info" ReturnType="Collection(MEDIDDMModel.SP_Show_Transection_Info_Result)" />
+          <FunctionImport Name="SP_Show_Transection_Detail" ReturnType="Collection(MEDIDDMModel.SP_Show_Transection_Detail_Result)" />
+          <FunctionImport Name="SP_Show_Transection_Data_Info" ReturnType="Collection(MEDIDDMModel.SP_Show_Transection_Data_Info_Result)" />
+          <FunctionImport Name="SP_GName_RName_Date_Purpose_Report" ReturnType="Collection(MEDIDDMModel.SP_GName_RName_Date_Purpose_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="GNAME" Mode="In" Type="Int32" />
+            <Parameter Name="RNAME" Mode="In" Type="Int32" />
+            <Parameter Name="PURPOSE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Giver_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Giver_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="GNAME" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Purpose_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Purpose_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="PURPOSE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Receiver_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Receiver_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="RNAME" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_Wise_Transection_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_Wise_Transection_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Giver_And_Receiver_Report" ReturnType="Collection(MEDIDDMModel.SP_Giver_And_Receiver_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="GNAME" Mode="In" Type="Int32" />
+            <Parameter Name="RNAME" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GName_RName_Date_Purpose_Report2" ReturnType="Collection(MEDIDDMModel.SP_GName_RName_Date_Purpose_Report2_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="GNAME" Mode="In" Type="Int32" />
+            <Parameter Name="RNAME" Mode="In" Type="Int32" />
+            <Parameter Name="PURPOSE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Day_Diposit_And_Expenses_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Day_Diposit_And_Expenses_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Name_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Name_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="NAME" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Day_And_Transection_Type_Report" ReturnType="Collection(MEDIDDMModel.SP_Day_And_Transection_Type_Report_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="EDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="TType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Name_Report" ReturnType="Collection(MEDIDDMModel.SP_Name_Report_Result)">
+          <Parameter Name="NAME" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Transection_Type_Report" ReturnType="Collection(MEDIDDMModel.SP_Transection_Type_Report_Result)">
+          <Parameter Name="TType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_7_Day_Data_Analysis" ReturnType="Collection(MEDIDDMModel.SP_7_Day_Data_Analysis_Result)">
+            <Parameter Name="SDATE" Mode="In" Type="DateTime" />
+            <Parameter Name="TTYPE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="DepartmentInfoes" EntityType="MEDIDDMModel.DepartmentInfo" />
+          <EntitySet Name="DipositInfoes" EntityType="MEDIDDMModel.DipositInfo" />
+          <EntitySet Name="GenderInfoes" EntityType="MEDIDDMModel.GenderInfo" />
+          <EntitySet Name="MoneyTransectionTables" EntityType="MEDIDDMModel.MoneyTransectionTable" />
+          <EntitySet Name="PersonalDipositInfoes" EntityType="MEDIDDMModel.PersonalDipositInfo" />
+          <EntitySet Name="ProductCatagories" EntityType="MEDIDDMModel.ProductCatagory" />
+          <EntitySet Name="ProductOutDetails" EntityType="MEDIDDMModel.ProductOutDetail" />
+          <EntitySet Name="ProductStockDetails" EntityType="MEDIDDMModel.ProductStockDetail" />
+          <EntitySet Name="PurposeInfoes" EntityType="MEDIDDMModel.PurposeInfo" />
+          <EntitySet Name="SecurityTables" EntityType="MEDIDDMModel.SecurityTable" />
+          <EntitySet Name="StudentInfoes" EntityType="MEDIDDMModel.StudentInfo" />
+          <EntitySet Name="sysdiagrams" EntityType="MEDIDDMModel.sysdiagram" />
+          <EntitySet Name="TypeInfoes" EntityType="MEDIDDMModel.TypeInfo" />
+          <EntitySet Name="UserInfoes" EntityType="MEDIDDMModel.UserInfo" />
+          <AssociationSet Name="FK_MoneyTransectionTable_PurposeInfo" Association="MEDIDDMModel.FK_MoneyTransectionTable_PurposeInfo">
+            <End Role="PurposeInfo" EntitySet="PurposeInfoes" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoneyTransectionTable_StudentInfo" Association="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoneyTransectionTable_StudentInfo1" Association="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo1">
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+            <End Role="MoneyTransectionTable" EntitySet="MoneyTransectionTables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonalDipositInfo_StudentInfo" Association="MEDIDDMModel.FK_PersonalDipositInfo_StudentInfo">
+            <End Role="StudentInfo" EntitySet="StudentInfoes" />
+            <End Role="PersonalDipositInfo" EntitySet="PersonalDipositInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStockDetail_ProductCatagory" Association="MEDIDDMModel.FK_ProductStockDetail_ProductCatagory">
+            <End Role="ProductCatagory" EntitySet="ProductCatagories" />
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductOutDetail_ProductStockDetail" Association="MEDIDDMModel.FK_ProductOutDetail_ProductStockDetail">
+            <End Role="ProductStockDetail" EntitySet="ProductStockDetails" />
+            <End Role="ProductOutDetail" EntitySet="ProductOutDetails" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_Show_Student_Info_Result">
+          <Property Type="Int64" Name="S_Id" Nullable="true" />
+          <Property Type="String" Name="S_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Dep_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="GERNDER" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="S_Address" Nullable="true" MaxLength="200" />
+          <Property Type="Int32" Name="S_Phonse" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Show_Transection_Info_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="S_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="S_Name1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Show_Transection_Detail_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="S_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="S_Name1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Show_Transection_Data_Info_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GName_RName_Date_Purpose_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Giver_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Purpose_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Receiver_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_Wise_Transection_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Giver_And_Receiver_Report_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_GName_RName_Date_Purpose_Report2_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="String" Name="Time" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Giver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Reciver_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="C_User" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="P_Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Remark" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Day_Diposit_And_Expenses_Report_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoginUser" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Transection" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="DipositAmount" Nullable="true" />
+          <Property Type="Int32" Name="ExpensesAmount" Nullable="true" />
+          <Property Type="DateTime" Name="C_Date" Nullable="true" />
+          <Property Type="DateTime" Name="E_Date" Nullable="true" />
+          <Property Type="DateTime" Name="D_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Name_Report_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoginUser" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Transection" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="DipositAmount" Nullable="true" />
+          <Property Type="Int32" Name="ExpensesAmount" Nullable="true" />
+          <Property Type="DateTime" Name="C_Date" Nullable="true" />
+          <Property Type="DateTime" Name="E_Date" Nullable="true" />
+          <Property Type="DateTime" Name="D_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Day_And_Transection_Type_Report_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoginUser" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Transection" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="DipositAmount" Nullable="true" />
+          <Property Type="Int32" Name="ExpensesAmount" Nullable="true" />
+          <Property Type="DateTime" Name="C_Date" Nullable="true" />
+          <Property Type="DateTime" Name="E_Date" Nullable="true" />
+          <Property Type="DateTime" Name="D_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Name_Report_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoginUser" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Transection" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="DipositAmount" Nullable="true" />
+          <Property Type="Int32" Name="ExpensesAmount" Nullable="true" />
+          <Property Type="DateTime" Name="C_Date" Nullable="true" />
+          <Property Type="DateTime" Name="E_Date" Nullable="true" />
+          <Property Type="DateTime" Name="D_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_Transection_Type_Report_Result">
+          <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LoginUser" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Transection" Nullable="false" MaxLength="8" />
+          <Property Type="Int32" Name="DipositAmount" Nullable="true" />
+          <Property Type="Int32" Name="ExpensesAmount" Nullable="true" />
+          <Property Type="DateTime" Name="C_Date" Nullable="true" />
+          <Property Type="DateTime" Name="E_Date" Nullable="true" />
+          <Property Type="DateTime" Name="D_Date" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SP_7_Day_Data_Analysis_Result">
+          <Property Type="DateTime" Name="Date" Nullable="true" />
+          <Property Type="Int32" Name="MoneyType" Nullable="true" />
+          <Property Type="Int32" Name="Money" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="DepartmentInfo">
+          <Key>
+            <PropertyRef Name="Dep_Id" />
+          </Key>
+          <Property Name="Dep_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dep_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DipositInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Id" Type="Int32" />
+          <Property Name="S_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DipositAmount" Type="Int32" />
+          <Property Name="C_Date" Type="DateTime" Precision="0" />
+          <Property Name="D_Date" Type="DateTime" Precision="0" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ExpensesAmount" Type="Int32" />
+          <Property Name="E_Date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="GenderInfo">
+          <Key>
+            <PropertyRef Name="G_Id" />
+          </Key>
+          <Property Name="G_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="G_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MoneyTransectionTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="GiverId" Type="Int32" />
+          <Property Name="ReciverId" Type="Int32" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurposeId" Type="Int32" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MoneyType" Type="Int32" />
+          <Property Name="Money" Type="Int32" />
+          <Property Name="C_User" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PurposeInfo" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_PurposeInfo" FromRole="MoneyTransectionTable" ToRole="PurposeInfo" />
+          <NavigationProperty Name="StudentInfo" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo" FromRole="MoneyTransectionTable" ToRole="StudentInfo" />
+          <NavigationProperty Name="StudentInfo1" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo1" FromRole="MoneyTransectionTable" ToRole="StudentInfo" />
+        </EntityType>
+        <EntityType Name="PersonalDipositInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Id" Type="Int32" />
+          <Property Name="DipositAmount" Type="Int32" />
+          <Property Name="ExpensesAmount" Type="Int32" />
+          <Property Name="C_Date" Type="DateTime" Precision="0" />
+          <Property Name="D_Date" Type="DateTime" Precision="0" />
+          <Property Name="E_Date" Type="DateTime" Precision="0" />
+          <Property Name="Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TransectionType" Type="Int32" />
+          <Property Name="LoginUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="StudentInfo" Relationship="MEDIDDMModel.FK_PersonalDipositInfo_StudentInfo" FromRole="PersonalDipositInfo" ToRole="StudentInfo" />
+        </EntityType>
+        <EntityType Name="ProductCatagory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Type" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductStockDetails" Relationship="MEDIDDMModel.FK_ProductStockDetail_ProductCatagory" FromRole="ProductCatagory" ToRole="ProductStockDetail" />
+        </EntityType>
+        <EntityType Name="ProductOutDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InDate" Type="DateTime" Precision="0" />
+          <Property Name="P_Id" Type="Int32" />
+          <Property Name="QTY" Type="Int32" />
+          <Property Name="GiverName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="OldOrNew" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductStockDetail" Relationship="MEDIDDMModel.FK_ProductOutDetail_ProductStockDetail" FromRole="ProductOutDetail" ToRole="ProductStockDetail" />
+        </EntityType>
+        <EntityType Name="ProductStockDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_SerialNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_Catagory" Type="Int32" />
+          <Property Name="P_Location" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_QTY" Type="Int32" />
+          <Property Name="P_In_Date" Type="DateTime" Precision="0" />
+          <Property Name="P_Condition" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_PersonName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="P_Remark" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductCatagory" Relationship="MEDIDDMModel.FK_ProductStockDetail_ProductCatagory" FromRole="ProductStockDetail" ToRole="ProductCatagory" />
+          <NavigationProperty Name="ProductOutDetails" Relationship="MEDIDDMModel.FK_ProductOutDetail_ProductStockDetail" FromRole="ProductStockDetail" ToRole="ProductOutDetail" />
+        </EntityType>
+        <EntityType Name="PurposeInfo">
+          <Key>
+            <PropertyRef Name="P_Id" />
+          </Key>
+          <Property Name="P_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="P_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MoneyTransectionTables" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_PurposeInfo" FromRole="PurposeInfo" ToRole="MoneyTransectionTable" />
+        </EntityType>
+        <EntityType Name="SecurityTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Validiti" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="StudentInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="S_Id" Type="Int64" />
+          <Property Name="S_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="S_GenderId" Type="Int32" />
+          <Property Name="S_DepId" Type="Int32" />
+          <Property Name="S_Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="S_Phonse" Type="Int32" />
+          <Property Name="S_DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="S_Discription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MoneyTransectionTables" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo" FromRole="StudentInfo" ToRole="MoneyTransectionTable" />
+          <NavigationProperty Name="MoneyTransectionTables1" Relationship="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo1" FromRole="StudentInfo" ToRole="MoneyTransectionTable" />
+          <NavigationProperty Name="PersonalDipositInfoes" Relationship="MEDIDDMModel.FK_PersonalDipositInfo_StudentInfo" FromRole="StudentInfo" ToRole="PersonalDipositInfo" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TypeInfo">
+          <Key>
+            <PropertyRef Name="It" />
+          </Key>
+          <Property Name="It" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Home" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Information" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Personal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Medid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Setting" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="About" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_MoneyTransectionTable_PurposeInfo">
+          <End Type="MEDIDDMModel.PurposeInfo" Role="PurposeInfo" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.MoneyTransectionTable" Role="MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PurposeInfo">
+              <PropertyRef Name="P_Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="PurposeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoneyTransectionTable_StudentInfo">
+          <End Type="MEDIDDMModel.StudentInfo" Role="StudentInfo" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.MoneyTransectionTable" Role="MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="GiverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoneyTransectionTable_StudentInfo1">
+          <End Type="MEDIDDMModel.StudentInfo" Role="StudentInfo" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.MoneyTransectionTable" Role="MoneyTransectionTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MoneyTransectionTable">
+              <PropertyRef Name="ReciverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonalDipositInfo_StudentInfo">
+          <End Type="MEDIDDMModel.StudentInfo" Role="StudentInfo" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.PersonalDipositInfo" Role="PersonalDipositInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonalDipositInfo">
+              <PropertyRef Name="S_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStockDetail_ProductCatagory">
+          <End Type="MEDIDDMModel.ProductCatagory" Role="ProductCatagory" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.ProductStockDetail" Role="ProductStockDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductCatagory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStockDetail">
+              <PropertyRef Name="P_Catagory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductOutDetail_ProductStockDetail">
+          <End Type="MEDIDDMModel.ProductStockDetail" Role="ProductStockDetail" Multiplicity="0..1" />
+          <End Type="MEDIDDMModel.ProductOutDetail" Role="ProductOutDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductStockDetail">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductOutDetail">
+              <PropertyRef Name="P_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MEDIDDMModelStoreContainer" CdmEntityContainer="MEDIDDMEntities">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MEDIDDMModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MEDIDDMModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MEDIDDMModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MEDIDDMModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MEDIDDMModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MEDIDDMModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MEDIDDMModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="SP_Show_Student_Info" FunctionName="MEDIDDMModel.Store.SP_Show_Student_Info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Show_Student_Info_Result">
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="Dep_Name" ColumnName="Dep_Name" />
+                <ScalarProperty Name="GERNDER" ColumnName="GERNDER" />
+                <ScalarProperty Name="S_Address" ColumnName="S_Address" />
+                <ScalarProperty Name="S_Phonse" ColumnName="S_Phonse" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Show_Transection_Data_Info" FunctionName="MEDIDDMModel.Store.SP_Show_Transection_Data_Info">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Show_Transection_Data_Info_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GName_RName_Date_Purpose_Report" FunctionName="MEDIDDMModel.Store.SP_GName_RName_Date_Purpose_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_GName_RName_Date_Purpose_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Giver_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Giver_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Giver_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Purpose_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Purpose_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Purpose_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Receiver_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Receiver_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Receiver_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_Wise_Transection_Report" FunctionName="MEDIDDMModel.Store.SP_Day_Wise_Transection_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_Wise_Transection_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Giver_And_Receiver_Report" FunctionName="MEDIDDMModel.Store.SP_Giver_And_Receiver_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Giver_And_Receiver_Report_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GName_RName_Date_Purpose_Report2" FunctionName="MEDIDDMModel.Store.SP_GName_RName_Date_Purpose_Report2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_GName_RName_Date_Purpose_Report2_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Giver_Name" ColumnName="Giver_Name" />
+                <ScalarProperty Name="Reciver_Name" ColumnName="Reciver_Name" />
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Day_Diposit_And_Expenses_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Day_Diposit_And_Expenses_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Day_Diposit_And_Expenses_Report_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="Transection" ColumnName="Transection" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Name_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Name_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Name_Report_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="Transection" ColumnName="Transection" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Day_And_Transection_Type_Report" FunctionName="MEDIDDMModel.Store.SP_Day_And_Transection_Type_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Day_And_Transection_Type_Report_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="Transection" ColumnName="Transection" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Name_Report" FunctionName="MEDIDDMModel.Store.SP_Name_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Name_Report_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="Transection" ColumnName="Transection" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_Transection_Type_Report" FunctionName="MEDIDDMModel.Store.SP_Transection_Type_Report">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_Transection_Type_Report_Result">
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="Transection" ColumnName="Transection" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_7_Day_Data_Analysis" FunctionName="MEDIDDMModel.Store.SP_7_Day_Data_Analysis">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MEDIDDMModel.SP_7_Day_Data_Analysis_Result">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="MoneyType" ColumnName="MoneyType" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DepartmentInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.DepartmentInfo">
+              <MappingFragment StoreEntitySet="DepartmentInfo">
+                <ScalarProperty Name="Dep_Name" ColumnName="Dep_Name" />
+                <ScalarProperty Name="Dep_Id" ColumnName="Dep_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DipositInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.DipositInfo">
+              <MappingFragment StoreEntitySet="DipositInfo">
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GenderInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.GenderInfo">
+              <MappingFragment StoreEntitySet="GenderInfo">
+                <ScalarProperty Name="G_Name" ColumnName="G_Name" />
+                <ScalarProperty Name="G_Id" ColumnName="G_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoneyTransectionTables">
+            <EntityTypeMapping TypeName="MEDIDDMModel.MoneyTransectionTable">
+              <MappingFragment StoreEntitySet="MoneyTransectionTable">
+                <ScalarProperty Name="C_User" ColumnName="C_User" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="MoneyType" ColumnName="MoneyType" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PurposeId" ColumnName="PurposeId" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ReciverId" ColumnName="ReciverId" />
+                <ScalarProperty Name="GiverId" ColumnName="GiverId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalDipositInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.PersonalDipositInfo">
+              <MappingFragment StoreEntitySet="PersonalDipositInfo">
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="TransectionType" ColumnName="TransectionType" />
+                <ScalarProperty Name="Discription" ColumnName="Discription" />
+                <ScalarProperty Name="E_Date" ColumnName="E_Date" />
+                <ScalarProperty Name="D_Date" ColumnName="D_Date" />
+                <ScalarProperty Name="C_Date" ColumnName="C_Date" />
+                <ScalarProperty Name="ExpensesAmount" ColumnName="ExpensesAmount" />
+                <ScalarProperty Name="DipositAmount" ColumnName="DipositAmount" />
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCatagories">
+            <EntityTypeMapping TypeName="MEDIDDMModel.ProductCatagory">
+              <MappingFragment StoreEntitySet="ProductCatagory">
+                <ScalarProperty Name="P_Type" ColumnName="P_Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductOutDetails">
+            <EntityTypeMapping TypeName="MEDIDDMModel.ProductOutDetail">
+              <MappingFragment StoreEntitySet="ProductOutDetail">
+                <ScalarProperty Name="OldOrNew" ColumnName="OldOrNew" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="GiverName" ColumnName="GiverName" />
+                <ScalarProperty Name="QTY" ColumnName="QTY" />
+                <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+                <ScalarProperty Name="InDate" ColumnName="InDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductStockDetails">
+            <EntityTypeMapping TypeName="MEDIDDMModel.ProductStockDetail">
+              <MappingFragment StoreEntitySet="ProductStockDetail">
+                <ScalarProperty Name="P_Remark" ColumnName="P_Remark" />
+                <ScalarProperty Name="P_PersonName" ColumnName="P_PersonName" />
+                <ScalarProperty Name="P_Condition" ColumnName="P_Condition" />
+                <ScalarProperty Name="P_In_Date" ColumnName="P_In_Date" />
+                <ScalarProperty Name="P_QTY" ColumnName="P_QTY" />
+                <ScalarProperty Name="P_Location" ColumnName="P_Location" />
+                <ScalarProperty Name="P_Catagory" ColumnName="P_Catagory" />
+                <ScalarProperty Name="P_SerialNumber" ColumnName="P_SerialNumber" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurposeInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.PurposeInfo">
+              <MappingFragment StoreEntitySet="PurposeInfo">
+                <ScalarProperty Name="P_Name" ColumnName="P_Name" />
+                <ScalarProperty Name="P_Id" ColumnName="P_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityTables">
+            <EntityTypeMapping TypeName="MEDIDDMModel.SecurityTable">
+              <MappingFragment StoreEntitySet="SecurityTable">
+                <ScalarProperty Name="Validiti" ColumnName="Validiti" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.StudentInfo">
+              <MappingFragment StoreEntitySet="StudentInfo">
+                <ScalarProperty Name="S_Discription" ColumnName="S_Discription" />
+                <ScalarProperty Name="S_DateOfBirth" ColumnName="S_DateOfBirth" />
+                <ScalarProperty Name="S_Phonse" ColumnName="S_Phonse" />
+                <ScalarProperty Name="S_Address" ColumnName="S_Address" />
+                <ScalarProperty Name="S_DepId" ColumnName="S_DepId" />
+                <ScalarProperty Name="S_GenderId" ColumnName="S_GenderId" />
+                <ScalarProperty Name="S_Name" ColumnName="S_Name" />
+                <ScalarProperty Name="S_Id" ColumnName="S_Id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MEDIDDMModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.TypeInfo">
+              <MappingFragment StoreEntitySet="TypeInfo">
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="It" ColumnName="It" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="MEDIDDMModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="Setting" ColumnName="Setting" />
+                <ScalarProperty Name="Medid" ColumnName="Medid" />
+                <ScalarProperty Name="Personal" ColumnName="Personal" />
+                <ScalarProperty Name="Information" ColumnName="Information" />
+                <ScalarProperty Name="Home" ColumnName="Home" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

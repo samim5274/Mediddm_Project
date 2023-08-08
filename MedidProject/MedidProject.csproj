@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD6E7987-D6E0-4431-9E7E-F959171B3742}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MedidProject</RootNamespace>
+    <AssemblyName>MedidProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivateForm.Designer.cs">
+      <DependentUpon>ActivateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisForm.Designer.cs">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndDayDepositAndExpensesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndDayDepositAndExpensesReport.Designer.cs">
+      <DependentUpon>DayAndDayDepositAndExpensesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndGiverReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndGiverReportForm.Designer.cs">
+      <DependentUpon>DayAndGiverReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndNameReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndNameReport.Designer.cs">
+      <DependentUpon>DayAndNameReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndPurposeReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndPurposeReportForm.Designer.cs">
+      <DependentUpon>DayAndPurposeReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndReceiverReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndReceiverReportForm.Designer.cs">
+      <DependentUpon>DayAndReceiverReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayAndTransectionTypeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAndTransectionTypeReport.Designer.cs">
+      <DependentUpon>DayAndTransectionTypeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayWithReceiverAndGiverReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayWithReceiverAndGiverReportForm.Designer.cs">
+      <DependentUpon>DayWithReceiverAndGiverReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DecimalToHexaDecimalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DecimalToHexaDecimalForm.Designer.cs">
+      <DependentUpon>DecimalToHexaDecimalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DipositInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DipositMoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DipositMoneyForm.Designer.cs">
+      <DependentUpon>DipositMoneyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenderInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="MEDID.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDID.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDID.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MEDID.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDID.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MEDIDDMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDIDDMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MEDIDDMDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDIDDMDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MEDIDDMDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDIDDMDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MEDIDDMDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MEDIDDMDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyTransectionTable.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyWithdrawForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyWithdrawForm.Designer.cs">
+      <DependentUpon>MoneyWithdrawForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotherForm.Designer.cs">
+      <DependentUpon>MotherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotherUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotherUIForm.Designer.cs">
+      <DependentUpon>MotherUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalDipositForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonalDipositForm.Designer.cs">
+      <DependentUpon>PersonalDipositForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalDipositInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCatagory.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOutDetail.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStockDetail.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurposeInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityTable.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SoftwareSecurityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoftwareSecurityForm.Designer.cs">
+      <DependentUpon>SoftwareSecurityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SP_7_Day_Data_Analysis_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Day_Diposit_And_Expenses_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Giver_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Name_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Purpose_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Receiver_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_And_Transection_Type_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Day_Wise_Transection_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Giver_And_Receiver_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GName_RName_Date_Purpose_Report2_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GName_RName_Date_Purpose_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Name_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Show_Student_Info_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Show_Transection_Data_Info_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Show_Transection_Detail_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Show_Transection_Info_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_Transection_Type_Report_Result.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Student_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student_Information.Designer.cs">
+      <DependentUpon>Student_Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransectionReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransectionReportForm.Designer.cs">
+      <DependentUpon>TransectionReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCreateForm.Designer.cs">
+      <DependentUpon>UserCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCreateForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCreateForm2.Designer.cs">
+      <DependentUpon>UserCreateForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>MEDID.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActivateForm.resx">
+      <DependentUpon>ActivateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalysisForm.resx">
+      <DependentUpon>AnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndDayDepositAndExpensesReport.resx">
+      <DependentUpon>DayAndDayDepositAndExpensesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndGiverReportForm.resx">
+      <DependentUpon>DayAndGiverReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndNameReport.resx">
+      <DependentUpon>DayAndNameReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndPurposeReportForm.resx">
+      <DependentUpon>DayAndPurposeReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndReceiverReportForm.resx">
+      <DependentUpon>DayAndReceiverReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAndTransectionTypeReport.resx">
+      <DependentUpon>DayAndTransectionTypeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayWithReceiverAndGiverReportForm.resx">
+      <DependentUpon>DayWithReceiverAndGiverReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DecimalToHexaDecimalForm.resx">
+      <DependentUpon>DecimalToHexaDecimalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DipositMoneyForm.resx">
+      <DependentUpon>DipositMoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyWithdrawForm.resx">
+      <DependentUpon>MoneyWithdrawForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotherForm.resx">
+      <DependentUpon>MotherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotherUIForm.resx">
+      <DependentUpon>MotherUIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalDipositForm.resx">
+      <DependentUpon>PersonalDipositForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SoftwareSecurityForm.resx">
+      <DependentUpon>SoftwareSecurityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student_Information.resx">
+      <DependentUpon>Student_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransectionReportForm.resx">
+      <DependentUpon>TransectionReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCreateForm.resx">
+      <DependentUpon>UserCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCreateForm2.resx">
+      <DependentUpon>UserCreateForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="MEDID.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MEDID.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MEDID.edmx.diagram">
+      <DependentUpon>MEDID.edmx</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet.xsc">
+      <DependentUpon>MEDIDDMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MEDIDDMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MEDIDDMDataSet.xss">
+      <DependentUpon>MEDIDDMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet1.xsc">
+      <DependentUpon>MEDIDDMDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MEDIDDMDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MEDIDDMDataSet1.xss">
+      <DependentUpon>MEDIDDMDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet2.xsc">
+      <DependentUpon>MEDIDDMDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MEDIDDMDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MEDIDDMDataSet2.xss">
+      <DependentUpon>MEDIDDMDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet3.xsc">
+      <DependentUpon>MEDIDDMDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="MEDIDDMDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MEDIDDMDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MEDIDDMDataSet3.xss">
+      <DependentUpon>MEDIDDMDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-george-becker-333837.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-jonathan-borba-3689186.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MEDID.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MEDID.edmx</DependentUpon>
+      <LastGenOutput>MEDID.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MEDID.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MEDID.edmx</DependentUpon>
+      <LastGenOutput>MEDID.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\dashboard 2.png" />
+    <None Include="Resources\power icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

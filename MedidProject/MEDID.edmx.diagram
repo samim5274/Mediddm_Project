@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b80161f01714fc69f4572e6707da225" Name="Diagram1">
+        <EntityTypeShape EntityType="MEDIDDMModel.DepartmentInfo" Width="1.5" PointX="2.75" PointY="1.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.DipositInfo" Width="1.5" PointX="5.75" PointY="6.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.GenderInfo" Width="1.5" PointX="7.75" PointY="6.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.MoneyTransectionTable" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="MEDIDDMModel.PersonalDipositInfo" Width="1.5" PointX="3" PointY="8.25" />
+        <EntityTypeShape EntityType="MEDIDDMModel.ProductCatagory" Width="1.5" PointX="5.75" PointY="2.5" />
+        <EntityTypeShape EntityType="MEDIDDMModel.ProductOutDetail" Width="1.5" PointX="10.25" PointY="2" />
+        <EntityTypeShape EntityType="MEDIDDMModel.ProductStockDetail" Width="1.5" PointX="8" PointY="1.625" />
+        <EntityTypeShape EntityType="MEDIDDMModel.PurposeInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MEDIDDMModel.SecurityTable" Width="1.5" PointX="7.75" PointY="9.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.StudentInfo" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="MEDIDDMModel.sysdiagram" Width="1.5" PointX="9.75" PointY="6.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.TypeInfo" Width="1.5" PointX="9.75" PointY="9.375" />
+        <EntityTypeShape EntityType="MEDIDDMModel.UserInfo" Width="1.5" PointX="0.75" PointY="12.375" />
+        <AssociationConnector Association="MEDIDDMModel.FK_MoneyTransectionTable_PurposeInfo" />
+        <AssociationConnector Association="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo" />
+        <AssociationConnector Association="MEDIDDMModel.FK_MoneyTransectionTable_StudentInfo1" />
+        <AssociationConnector Association="MEDIDDMModel.FK_PersonalDipositInfo_StudentInfo" />
+        <AssociationConnector Association="MEDIDDMModel.FK_ProductStockDetail_ProductCatagory" />
+        <AssociationConnector Association="MEDIDDMModel.FK_ProductOutDetail_ProductStockDetail" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
